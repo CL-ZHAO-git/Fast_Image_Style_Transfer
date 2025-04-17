@@ -1,5 +1,5 @@
 # Development and Deployment of Style Transfer Mini-Program
-**This Project is Finished in Fall 2021**
+**This Project is Finished in Fall 2020**
 
 **Team Members: Zhao Chengliang, Sun Yize, Wu Jincheng, Xu Hanjia, Zhan Pei**
 
@@ -15,7 +15,7 @@
 
 To build a neural style transfer system, we define a cost function for the generated image. By minimizing this cost function, we generate the final image. In Gatys' paper, the overall loss function is defined as follows:
 
-$ J(G)=\alpha J_{content}(C,G)+\beta J_{style}(S,G)$
+$$ J(G)=\alpha J_{content}(C,G)+\beta J_{style}(S,G)$$
 
 Where $J_{content}$ measures the content difference between the generated image and the content image; $J_{style}$ represents the style and texture difference between the generated image and the style image. After defining the loss function, we can continuously minimize this loss function using gradient descent.
 
@@ -25,17 +25,17 @@ During this process, we are actually updating each pixel in the generated image.
 
 In convolutional neural networks, each layer uses the output of the previous layer to further extract more complex features until they are complex enough to be used for object recognition. So each layer can be viewed as a collection of local feature extractors. We want to use these pre-trained neural networks to measure the similarity between the generated image and the content image. Generally, lower layers describe specific visual features of the image (such as texture, color, etc.), while higher layer features are more abstract descriptions of the image content. So we compare the similarity of high-layer features of two images. Specifically, we extract the results computed by a specific layer of the network for the image, which are the activation factors of this specific layer. The content loss is defined as:
 
-$J_{content}=\frac{1}{2}\left \| a^{[l](C)} - a^{[l](G)}\right \|$
+$$J_{content}=\frac{1}{2}\left \| a^{[l](C)} - a^{[l](G)}\right \|$$
 
 Where $ a^{[l](C)}$ and $ a^{[l](G)}$ represent the activation factors (in matrix form in CNN) of the content image and the generated image at the l-th layer of the neural network. Here, VGG16 or VGG19 is generally selected as the pre-trained network for feature extraction.
 
-- **Style Loss** **Style** is an abstract concept in art, but certain shapes in paintings often have specific colors. Taking "Starry Night" as an example, circular shapes are always blue or yellow. So if an image has many blue or yellow concentric circles, we can consider it to have some features of "Starry Night". The convolutional layers in convolutional neural networks are feature extractors, and different channel convolution kernels may extract different image features, such as a specific color or shape. If we calculate the correlation between these features, if the correlation is large, it indicates that this image has more of this style. Therefore, we use the pre-trained network VGG16 to calculate the style loss. **Gram Matrix**: $G_{k,k{}'}^{[l]}=\sum_{i=1}^{n_{H}^{[l]}}\sum_{i=1}^{n_{W}^{[l]}}a_{i,j,k}^{[l]}a_{i,j,k{}'}^{[l]}$
+- **Style Loss** **Style** is an abstract concept in art, but certain shapes in paintings often have specific colors. Taking "Starry Night" as an example, circular shapes are always blue or yellow. So if an image has many blue or yellow concentric circles, we can consider it to have some features of "Starry Night". The convolutional layers in convolutional neural networks are feature extractors, and different channel convolution kernels may extract different image features, such as a specific color or shape. If we calculate the correlation between these features, if the correlation is large, it indicates that this image has more of this style. Therefore, we use the pre-trained network VGG16 to calculate the style loss. **Gram Matrix**: $$G_{k,k{}'}^{[l]}=\sum_{i=1}^{n_{H}^{[l]}}\sum_{i=1}^{n_{W}^{[l]}}a_{i,j,k}^{[l]}a_{i,j,k{}'}^{[l]}$$
 
 Where $a_{i,j,n}^{[l]}$ is the activation value at the i-th row, j-th column of the n-th channel after the image is computed through the l-th layer of the network. The Gram matrix $G^{[l]}$ is a $n_{H}^{[l]} \times n_{W}^{[l]}$ matrix. The main function of the Gram matrix is to measure the correlation between different channels at a specific layer of the neural network. Its essence is the matrix obtained by transposing and multiplying the activation factor matrix (feature map) generated after computing each layer of the convolution kernel.
 
 After defining the Gram matrix, we can use the Gram matrix of specific layers in the network to measure the generated image and the style image. The style loss is defined as follows:
 
-$J_{style}^{[l]}=\frac{1}{(2n_{H}^{[l]}n_{W}^{[l]}n_{C}^{[l]})}\sum_{k}^{}\sum_{k{}'}^{}(G_{k,k{}'}^{[l](G)}-G_{k,k{}'}^{[l](S)})^2$
+$$J_{style}^{[l]}=\frac{1}{(2n_{H}^{[l]}n_{W}^{[l]}n_{C}^{[l]})}\sum_{k}^{}\sum_{k{}'}^{}(G_{k,k{}'}^{[l](G)}-G_{k,k{}'}^{[l](S)})^2$$
 
 ### 1.2 Original Style Transfer[1](#refer-anchor-1)
 
