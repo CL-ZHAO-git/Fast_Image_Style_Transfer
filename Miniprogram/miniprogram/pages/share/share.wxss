@@ -1,0 +1,71 @@
+/* pages/share/share.wxss */
+
+page {
+  height: 100%;
+  background-color: #242728;
+}
+
+.total {
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.imgStyle {
+  width: 80%;
+  height: 75%;
+  background-color: white;
+  margin-top: 60rpx;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.text1 {
+  width: 480rpx;
+  margin: 30rpx 10rpx;
+  overflow-wrap: break-word;
+}
+
+.poststyle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  margin-top: 50rpx;
+  height: 480rpx;
+  width: 480rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5px 5px #D0D0CF;
+}
+
+.logototal {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+
+.logototal text {
+  font-size: 25rpx;
+  margin-right: 40rpx;
+}
+
+.logo {
+  width: 150rpx;
+  height: 150rpx;
+  margin-top: -40rpx;
+  margin-left: 20rpx;
+}
+
+.saveBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80rpx;
+}

@@ -1,0 +1,15 @@
+<view class="total">
+  <canvas type="2d" id="myCanvas" class="imgStyle">
+  <!-- <view class="imgStyle"> -->
+    <view class="poststyle">
+      <image src="{{imgsrc}}" class="post"/>
+      <view class="text1">—— 既然选择远方，当不负青春 ，砥砺前行。</view>
+    </view>
+    <view class="logototal">
+      <image src="/images/logo1.png" class="logo" mode="aspectFit"/>
+      <text>照片风格迁移——{{modellist[style]}}\nAI画家</text>
+    </view>
+  <!-- </view> -->
+  </canvas>
+  <!-- <van-button round disabled="{{changeStyle}}" type="primary" size="normal" class="saveBtn" bindtap="saveimg">保存海报</van-button> -->
+</view>

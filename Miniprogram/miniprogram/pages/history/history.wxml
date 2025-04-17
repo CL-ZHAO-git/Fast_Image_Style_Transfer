@@ -1,0 +1,12 @@
+<view class="cards" wx:for="{{list}}" wx:for-item="item" wx:key="item">
+	<view class="nav">
+		<view class="card card-url">
+			<image src="{{item.imgsrc}}" mode="widthFix"></image>
+		</view>
+		<view class=" card card-text">
+			<view class="card-title">上传时间：{{item.time}}</view>
+			<view class="card-desc">图片风格：{{modellist[item.style]}}</view>
+		</view>
+	</view>
+	<view class="space"></view>
+</view>

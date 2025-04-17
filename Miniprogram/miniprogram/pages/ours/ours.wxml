@@ -1,0 +1,30 @@
+<!--miniprogram/pages/ours/ours.wxml-->
+	
+<scroll-view scroll-y="true" style="width: 100%; height: 100%">
+	<view bindtouchend="touchEnd" bindtouchstart="touchStart" class="container">
+		<van-row style="margin-top:100rpx;">
+			<van-col class="text1">—— 团队成员 ——</van-col>
+		</van-row>
+		<van-row style="margin-top:50rpx;">
+			<van-col class="text2" bindtap="navigate1">赵呈亮 孙易泽 吴锦程 许函嘉 詹沛</van-col>
+		</van-row>
+		<van-row style="margin-top:180rpx;">
+			<van-col class="text1">—— 指导老师 ——</van-col>
+		</van-row>
+		<van-row style="margin-top:50rpx;">
+			<van-col class="text2" bindtap="navigate1">郭亮</van-col>
+		</van-row>
+    		<van-row style="margin-top:180rpx;">
+			<van-col class="text1">—— 学校 ——</van-col>
+		</van-row>
+		<van-row style="margin-top:50rpx;">
+			<van-col class="text2" bindtap="navigate1">山东大学（威海）</van-col>
+		</van-row>
+    <van-row style="margin-top:180rpx;">
+			<van-col class="text1">—— 联系我们 ——</van-col>
+		</van-row>
+		<van-row style="margin-top:50rpx;">
+			<van-col class="text2" bindtap="navigate1">chengliang_zhao@mail.sdu.edu.cn</van-col>
+		</van-row>
+	</view>
+</scroll-view>

@@ -1,0 +1,54 @@
+<view class="userinfo">
+  <view class="userinfo-avatar">
+    <open-data  type="userAvatarUrl"></open-data>
+  </view>
+</view>
+
+
+<view class="circle">
+	<van-row style="margin-top:100rpx;">
+  <button class="clear" bindtap="gotohistory">
+    <view class="weui-item border-shadow background-1">
+      <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view class="weui-item__title">
+            历史记录
+          </view>
+          <view class="weui-item__desc">History</view>
+        </view>
+      </view>
+    </view>
+  </button>
+ </van-row>
+ <van-row style="margin-top:150px;">
+  <button class="clear" open-type="contact">
+ 
+    <view class="weui-item border-shadow background-2">
+      <view class="weui-flex">
+        <view class="weui-flex__item">
+          <view class="weui-item__title">
+        
+            意见反馈
+          </view>
+          <view class="weui-item__desc">Feedback</view>
+        </view>
+
+      </view>
+    </view>
+  </button>
+  </van-row>
+  <van-row style="margin-top:150px;">
+  <button class="clear" bindtap="gotoours">
+      <view class="weui-item border-shadow background-1">
+        <view class="weui-flex">
+          <view class="weui-flex__item">
+            <view class="weui-item__title">
+              关于我们
+            </view>
+            <view class="weui-item__desc">About</view>
+          </view>
+        </view>
+      </view>
+  </button>
+  </van-row>
+</view>
