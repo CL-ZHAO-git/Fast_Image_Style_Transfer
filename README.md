@@ -15,7 +15,7 @@
 
 To build a neural style transfer system, we define a cost function for the generated image. By minimizing this cost function, we generate the final image. In Gatys' paper, the overall loss function is defined as follows:
 
-$$ J(G)=\alpha J_{content}(C,G)+\beta J_{style}(S,G)$$
+$$J(G)=\alpha J_{content}(C,G)+\beta J_{style}(S,G)$$
 
 Where $J_{content}$ measures the content difference between the generated image and the content image; $J_{style}$ represents the style and texture difference between the generated image and the style image. After defining the loss function, we can continuously minimize this loss function using gradient descent.
 
